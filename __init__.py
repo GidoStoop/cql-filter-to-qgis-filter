@@ -7,6 +7,6 @@
 """
 
 def serverClassFactory(serverIface):
-    from . ParamsFilter import ParamsFilter
-    return ParamsFilter(serverIface)
+    from .FilterInterceptor import FilterInterceptor
+    return FilterInterceptor(serverIface)
 
