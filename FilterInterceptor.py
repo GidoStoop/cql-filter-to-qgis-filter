@@ -15,7 +15,7 @@ __date__ = '2024-12-06'
 from qgis.server import QgsServerFilter
 from qgis.core import QgsMessageLog
 from qgis.server import *
-import CqlFilterToQgisFilter
+from .CqlFilterToQgisUtil import cql_filter_string_to_qgis_filter_string
 
 class FilterInterceptorService(QgsServerFilter):
 
@@ -25,10 +25,10 @@ class FilterInterceptorService(QgsServerFilter):
     def onRequestReady(self) -> bool:
         request = self.serverInterface().requestHandler()
         params = request.parameterMap( )
-        if 'CQL_FILTER' in params:
+        if 'CQL_FILTER' in params and params['SERVICE'] == 'WMS':
             cql_filter_string = params['CQL_FILTER']
 
-            qgis_filter_string = CqlFilterToQgisFilter.cql_filter_string_to_qgis_filter_string(cql_filter_string, params)
+            qgis_filter_string = cql_filter_string_to_qgis_filter_string(cql_filter_string, params)
             request.removeParameter("CQL_FILTER")
             request.setParameter('FILTER', qgis_filter_string)
             QgsMessageLog.logMessage(qgis_filter_string)

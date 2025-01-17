@@ -4,14 +4,16 @@
 
 ---
 
-**Note:** Alpha version (18 December 2024)
+| Version | Date (dd-mm-yyyy) | Comment |
+|:---------:|:------:|:---------:|
+|0.1|18-10-2024|Test phase|
+|1.0|17-01-2025|Major update and first release|
+
 
 ---
 
 ### 🛠️ Usage
 Useful when you don't have control over the construction of the query string, but do have access to the QGIS server the request is heading for. Also useful if you want to use a uniform WMS request that works for both Geoserver and QGIS server in your front-end app.
-
-
 
 **Example:** 
 For filtering a WMS layer in CQL syntax, the following is allowed:
@@ -25,6 +27,11 @@ For filtering a WMS layer in QGIS syntax, only the following is allowed:
 
 QGIS requests allow requesting multiple layers in a single request, therefore the layer needs to be specified. This plugin takes the first layer specified in the <code>LAYERS</code> parameter. Text strings have to be enclosed in single or double quotes. A space between each word/special character in mandatory.
 
+**Limitations:**
+- Arithmetic expressions don't work in QGIS-server
+- Geometric filters are not yet supported in this version of the plugin
+- The request can only handle one layer or typename per request
+
 ---
 
 ### 🔑 Supported keywords:
@@ -35,6 +42,7 @@ Keywords that can be used in the <code>CQL_FILTER</code> parameter and will succ
 - AND
 - OR
 - IN
+- IN (layer.id2, layer.id1)
 - =
 - &lt;
 - &gt;
@@ -43,6 +51,12 @@ Keywords that can be used in the <code>CQL_FILTER</code> parameter and will succ
 - !=
 - LIKE
 - ILIKE
+- BETWEEN
+- % (wildcard symbol)
+- (
+- )
+- [
+- ]
 
 In the future I would like to implement spatial filters as well. If you have more knowledge about how <code>FILTER_GEOM</code> works in QGIS server, please contact me (see source code for email address).
 
@@ -65,5 +79,4 @@ Want to write your own plugin? See the documentation in the [PyQGIS Developers C
 
 ### 📋 To Do
 
-- Make the script more robust, now field names containing some of the keyword can mess up the request.
-- Publish to QGIS server plugin repository
+- Add geometric filters
