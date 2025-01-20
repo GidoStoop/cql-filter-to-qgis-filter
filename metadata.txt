@@ -1,10 +1,10 @@
 [general]
-name=QGIS Server Custom Service Plugin
+name=CQL Filter to QGIS Filter request
 qgisMinimumVersion=3.0
-description=QGIS Server Custom Service Plugin 
+description=Intercepts and transforms a CQL_FILTER (Geoserver standard) WMS request parameters to QGIS server-compatible FILTER parameter 
 version=version 1.0
-author=Alessandro Pasotti (ItOpen)
-email=elpaso@itopen.it
+author=Gido Stoop
+email=gidostoop9@gmail.com
 ; if True it's a server plugin
 server=True
 

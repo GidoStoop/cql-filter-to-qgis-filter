@@ -1,6 +1,20 @@
-# 🧩 CQL Filter to QGIS Server Filter Plugin
+# 🧩 CQL Filter to QGIS Filter request Plugin
 ---
-### Intercepts and transforms a <code>CQL_FILTER</code> (Geoserver standard) WMS request parameters to QGIS server-compatible <code>FILTER</code> parameter
+### QGIS server plugin that intercepts and transforms a <code>CQL_FILTER</code> (Geoserver standard) WMS request to QGIS server-compatible <code>FILTER</code> request
+
+CQL_FILTER (Geoserver) and FILTER (QGIS-server) synthax differ. This plugin can be used to use an off-the-shelve web-viewer that uses Geoserver filter sythax for your QGIS server WMS layers.
+
+**The request:**
+
+<code>http://qgis.demo/cgi-bin/qgis_mapserv.fcgi?{..}&LAYERS=countries&CQL_FILTER=name='France'</code>
+
+**gets intercepted and becomes:**
+
+<code>http://qgis.demo/cgi-bin/qgis_mapserv.fcgi?{..}&LAYERS=countries&FILTER=countries:"name"%20=%20'France'</code>
+
+**So that QGIS server is able to process the request as if it were a Geoserver layer.**
+
+<sup>Note: The CQL_FILTER is also preserverd, so that the request still works for Geoserver layers as well. <sup>
 
 ---
 
