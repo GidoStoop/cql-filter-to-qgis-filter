@@ -8,6 +8,6 @@ email=gidostoop9@gmail.com
 ; if True it's a server plugin
 server=True
 
-changelog=
-
-about=Adds Custom Service
+tracker=https://github.com/GidoStoop/cql-filter-to-qgis-filter
+homepage=https://github.com/GidoStoop/cql-filter-to-qgis-filter
+repository=https://github.com/GidoStoop/cql-filter-to-qgis-filter

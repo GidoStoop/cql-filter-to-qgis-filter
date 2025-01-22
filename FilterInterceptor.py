@@ -15,7 +15,7 @@ __date__ = '2024-12-06'
 from qgis.server import QgsServerFilter
 from qgis.core import QgsMessageLog
 from qgis.server import *
-from .CqlFilterToQgisUtil import cql_filter_string_to_qgis_filter_string
+from .utils.CqlFilterToQgisUtil import cql_filter_string_to_qgis_filter_string
 
 class FilterInterceptorService(QgsServerFilter):
 
