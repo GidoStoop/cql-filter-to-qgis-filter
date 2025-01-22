@@ -1,12 +1,15 @@
 [general]
-name=CQL Filter to QGIS Filter request
+name=WMS CQL Filter to QGIS Server Filter Request
 qgisMinimumVersion=3.0
-description=Intercepts and transforms a CQL_FILTER (Geoserver standard) WMS request parameters to QGIS server-compatible FILTER parameter 
-version=version 1.0
+description=Transforms CQL_FILTER WMS request to a QGIS server compatible FILTER request
+about=QGIS server plugin that intercepts and transforms a CQL_FILTER (Geoserver standard) WMS request to QGIS server-compatible FILTER request, which has a different syntax. See Github for more info.
+version=1.0
 author=Gido Stoop
 email=gidostoop9@gmail.com
 ; if True it's a server plugin
 server=True
+
+tags=wms,server,qgisserver,filter,cql,ecql,request
 
 tracker=https://github.com/GidoStoop/cql-filter-to-qgis-filter
 homepage=https://github.com/GidoStoop/cql-filter-to-qgis-filter

@@ -1,4 +1,6 @@
-# 🧩 CQL Filter to QGIS Filter request Plugin
+# CQL Filter to QGIS Filter request Plugin
+[<img src="icon.png" width="80"/>](icon.png) Icon created by surang - Flaticon
+
 ---
 ### QGIS server plugin that intercepts and transforms a <code>CQL_FILTER</code> (Geoserver standard) WMS request to QGIS server-compatible <code>FILTER</code> request
 
@@ -23,6 +25,7 @@ CQL_FILTER (Geoserver) and FILTER (QGIS-server) synthax differ. This plugin can 
 |0.1|18-10-2024|Test phase|
 |1.0|17-01-2025|Major update and first release|
 
+Icon 
 
 ---
 
@@ -40,6 +43,8 @@ For filtering a WMS layer in QGIS syntax, only the following is allowed:
 <code>FILTER=countries:( "name" = 'France' )</code>
 
 QGIS requests allow requesting multiple layers in a single request, therefore the layer needs to be specified. This plugin takes the first layer specified in the <code>LAYERS</code> parameter. Text strings have to be enclosed in single or double quotes. A space between each word/special character in mandatory.
+
+If the transformation is succesful, the results will also be printed to the QGIS server logs.
 
 **Limitations:**
 - Arithmetic expressions don't work in QGIS-server
@@ -94,3 +99,5 @@ Want to write your own plugin? See the documentation in the [PyQGIS Developers C
 ### 📋 To Do
 
 - Add geometric filters
+
+Feel free to contribute any way you like!
