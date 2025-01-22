@@ -4,7 +4,7 @@
 ---
 ### QGIS server plugin that intercepts and transforms a <code>CQL_FILTER</code> (Geoserver standard) WMS request to QGIS server-compatible <code>FILTER</code> request
 
-CQL_FILTER (Geoserver) and FILTER (QGIS-server) synthax differ. This plugin can be used to use an off-the-shelve web-viewer that uses Geoserver filter sythax for your QGIS server WMS layers.
+CQL_FILTER (Geoserver) and FILTER (QGIS-server) syntax differ. This plugin can be used to use an off-the-shelf web-viewer that uses Geoserver filter syntax for your QGIS server WMS layers.
 
 **The request:**
 
